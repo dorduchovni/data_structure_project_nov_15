@@ -7,6 +7,9 @@
 
 public class RBTree {
 
+    private RBNode root;
+
+
 
     /**
      * public class RBNode
@@ -17,21 +20,72 @@ public class RBTree {
         private boolean isRed;
         private RBNode leftChild;
         private RBNode rightChild;
+        private RBNode parent;
 
-        boolean isRed() {
-            return true;
+        public RBNode(String value, int key, boolean isRed, RBNode leftChild, RBNode rightChild, RBNode parent) {
+            this.value = value;
+            this.key = key;
+            this.isRed = isRed;
+            this.leftChild = leftChild;
+            this.rightChild = rightChild;
+            this.parent = parent;
         }
 
-        RBNode getLeft() {
-            return null;
+        public RBNode(String value, int key) {
+            this.value = value;
+            this.key = key;
+            this.isRed = true;
+            this.leftChild = null;
+            this.rightChild = null;
+            this.parent = null;
         }
 
-        RBNode getRight() {
-            return null;
+        public String getValue() {
+            return value;
         }
 
-        int getValue() {
-            return 0;
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        public int getKey() {
+            return key;
+        }
+
+        public void setKey(int key) {
+            this.key = key;
+        }
+
+        public boolean isRed() {
+            return isRed;
+        }
+
+        public void setRed(boolean red) {
+            isRed = red;
+        }
+
+        public RBNode getLeftChild() {
+            return leftChild;
+        }
+
+        public void setLeftChild(RBNode leftChild) {
+            this.leftChild = leftChild;
+        }
+
+        public RBNode getRightChild() {
+            return rightChild;
+        }
+
+        public void setRightChild(RBNode rightChild) {
+            this.rightChild = rightChild;
+        }
+
+        public RBNode getParent() {
+            return parent;
+        }
+
+        public void setParent(RBNode parent) {
+            this.parent = parent;
         }
     }
 
@@ -142,6 +196,11 @@ public class RBTree {
         return 42; // to be replaced by student code
     }
 
+
+
+    private RBNode[] treeToOrderedArray() {
+
+    }
 
     /**
      * If you wish to implement classes, other than RBTree and RBNode, do it in this file, not in
